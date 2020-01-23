@@ -1,0 +1,12 @@
+from random import choice
+print('choose')
+print('left,center,right')
+you = input()
+print('you kicked '+you)
+d=['left','center','right']
+com = choice(d)
+print('computer saved '+com)
+if you!=com:
+    print('goal')
+else:
+    print('oops')

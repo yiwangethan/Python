@@ -1,0 +1,21 @@
+headers = {
+'User-Agent': r'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
+                r'Chrome/45.0.2454.85 Safari/537.36 115Browser/6.0.3',
+                'Referer': r'http://www.lagou.com/zhaopin/Python/?labelWords=label',
+                'Connection': 'keep-alive'
+}
+import urllib.request
+from urllib.request import urlopen
+from urllib.request import Request
+from bs4 import BeautifulSoup
+import json
+from city import city
+
+cityname = input('which\n')
+citycode = city.get(cityname)
+
+if citycode:
+   url = ('http://www.weather.com.cn/data/cityinfo/%s.html' % citycode)
+   content = urllib.request.urlopen(url).read()
+   test = content.decode('utf8')
+   print(test)
